@@ -1,0 +1,49 @@
+h2 {
+  margin-top: 60px;
+  margin-left: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.Сast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* .Сast_titel {
+  margin-left: 20px;
+  margin-top: 80px;
+}  */
+.Cast_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.Cast_item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.Actor_image {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.Actor_name {
+  font-size: 20px;
+}
+
+.btn_GoBack {
+  position: absolute;
+  top: 70px;
+  left: 20px; 
+} 

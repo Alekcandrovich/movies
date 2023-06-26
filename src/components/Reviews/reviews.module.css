@@ -1,0 +1,18 @@
+h2 {
+  margin-top: 60px;
+  margin-left: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+li {
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.btn_GoBack {
+  position: absolute;
+  top: 70px;
+  left: 20px; 
+}

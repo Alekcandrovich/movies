@@ -1,0 +1,36 @@
+.div_Movie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 20px;
+}
+
+.ul_Movie {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 20px;
+
+}
+
+li {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.h2_Movie {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+.h2_Movie:hover {
+  text-decoration: underline;
+}
+
+.label_search {
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 0 4px 4px 0;
+  border: none;
+}
