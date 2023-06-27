@@ -4,20 +4,16 @@ import css from './layout.module.css'
 const Layout = () => {
   return (
     <>
-      <header className={css.header}>
-        <ul className={css.Nav_list}>
-          <li className={css.Nav_item}>
-            <NavLink to='/'>
-              <button type='button' className={css.btn_Home}>
-                Home
-              </button>
+      <header className={css.nav_header}>
+        <ul className={css.nav_list}>
+          <li className={css.nav_item}>
+            <NavLink to="/" className={css.nav_activ}>
+              Home
             </NavLink>
           </li>
           <li>
-            <NavLink to='/movies'>
-              <button type='button' className={css.btn_Movies}>
-                Movies
-              </button>
+            <NavLink to="/movies" className={css.nav_activ}>
+              Movies
             </NavLink>
           </li>
         </ul>

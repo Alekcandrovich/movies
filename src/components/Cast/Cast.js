@@ -38,10 +38,8 @@ const Cast = () => {
         ))}
       </ul>
 
-      <Link to={`/movies/${movieId}`}>
-        <button type='button' className={css.btn_GoBack}>
-          Go back
-        </button>
+      <Link to={`/movies/${movieId}`} className={css.goBack}>
+        Go back
       </Link>
     </div>
   );

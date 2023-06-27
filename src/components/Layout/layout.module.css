@@ -1,10 +1,10 @@
-.header {
+.nav_header {
   display: flex;
   align-items: center;
   border-bottom: 2px solid #808080;
 }
 
-.Nav_list {
+.nav_list {
   display: flex;
   align-items: center;
   list-style: none;
@@ -12,29 +12,6 @@
   padding: 0;
 }
 
-.Nav_item {
+.nav_item {
   margin: 0 20px;
-}
-
-button {
-  background-color: #e1f3f3;
-  border: 1px solid #808080;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-weight: bold;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #808080;
-  color: #ffffff;
-}
-
-.btn_Home {
-  color: #0000ff;
-  margin-right: 20px;
-}
-
-.btn_Movies {
-  color: #008000;
 }
