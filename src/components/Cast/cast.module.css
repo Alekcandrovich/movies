@@ -1,5 +1,5 @@
 h2 {
-  margin-top: 60px;
+  margin-top: 20px;
   margin-left: 20px;
   font-size: 28px;
   font-weight: bold;
@@ -12,10 +12,6 @@ h2 {
   margin-top: 20px;
 }
 
-/* .Сast_titel {
-  margin-left: 20px;
-  margin-top: 80px;
-}  */
 .Cast_list {
   list-style: none;
   display: flex;

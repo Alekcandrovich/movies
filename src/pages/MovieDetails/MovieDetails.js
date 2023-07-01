@@ -1,21 +1,25 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { NavLink, Link, Outlet, useParams } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import { Link, NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import { fetchMovieDetails } from '../../api/api';
 import css from './movieDetails.module.css';
-
-const API_KEY = '6758950845121a157509706cf14c21e8';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState(null);
+  const [movie, setMovie] = useState (null);
+  const location = useLocation();
+  const goBackLocationRef = useRef(location.state?.from || '/');
 
-  useEffect(() => {
-    const fetchMovieDetails = async () => {
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`);
-      setMovie(response.data);
+    useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const movieDetails = await fetchMovieDetails(movieId);
+        setMovie(movieDetails);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
-    fetchMovieDetails();
+    fetchData();
   }, [movieId]);
 
   if (!movie) {
@@ -30,6 +34,8 @@ const MovieDetails = () => {
   const minutes = runtime % 60;
   const runtimeDisplay = `${hours}h ${minutes}m`;
   const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
+
+  console.log(location.state);
 
   return (
     <>
@@ -54,21 +60,19 @@ const MovieDetails = () => {
           <p>
             <strong>Overview:</strong> {overview}
           </p>
-          <Link to={`/`} className={css.goBack}> Go back</Link>
+          <Link to={goBackLocationRef.current} className={css.goBack}>
+            Go back
+          </Link>
         </div>
       </div>
       <div className={css.CastReviews}>
         <h4 className={css.titel_info}>Additional information</h4>
         <div className={css.inform}>
           <div className={css.margin}>
-            <NavLink to={`/movies/${movieId}/cast`}>
-              View Cast
-            </NavLink>
+            <NavLink to={`/movies/${movieId}/cast`}>View Cast</NavLink>
           </div>
           <div>
-            <NavLink to={`/movies/${movieId}/reviews`}>
-               View Reviews
-            </NavLink>
+            <NavLink to={`/movies/${movieId}/reviews`}>View Reviews</NavLink>
           </div>
         </div>
         <Outlet />

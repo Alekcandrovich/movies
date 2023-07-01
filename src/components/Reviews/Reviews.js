@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
-import css from './reviews.module.css';
-
-const API_KEY = '6758950845121a157509706cf14c21e8';
+import { fetchMovieReviews } from '../../api/api';
+import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
   const { movieId } = useParams();
@@ -11,8 +8,12 @@ const Reviews = () => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${API_KEY}`);
-      setReviews(response.data.results);
+      try {
+        const reviews = await fetchMovieReviews(movieId);
+        setReviews(reviews);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     fetchReviews();
@@ -33,9 +34,6 @@ const Reviews = () => {
       ) : (
         <p>No reviews yet</p>
       )}
-      <Link to={`/movies/${movieId}`} className={css.goBack}>
-        Go back
-      </Link>
     </div>
   );
 };

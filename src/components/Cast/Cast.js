@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { fetchCastMovie } from '../../api/api';
 import css from './cast.module.css';
-
-const API_KEY = '6758950845121a157509706cf14c21e8';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -11,8 +9,12 @@ const Cast = () => {
 
   useEffect(() => {
     const fetchCast = async () => {
-      const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`);
-      setCast(response.data.cast);
+      try {
+        const castData = await fetchCastMovie(movieId);
+        setCast(castData);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     fetchCast();
@@ -37,10 +39,6 @@ const Cast = () => {
           </li>
         ))}
       </ul>
-
-      <Link to={`/movies/${movieId}`} className={css.goBack}>
-        Go back
-      </Link>
     </div>
   );
 };
