@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Layout from './Layout';
 
@@ -19,7 +19,7 @@ const App = () => {
             <Route path='cast' element={<Cast />} />
             <Route path='reviews' element={<Reviews />} />
           </Route>  
-          <Route to='/' />
+          <Route path='*' element={<Navigate to='/' />} />
         </Route>
       </Routes>
     </Suspense>
