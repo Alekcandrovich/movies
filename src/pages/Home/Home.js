@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { fetchPopular } from '../../api/api';
 import css from './home.module.css'
 
@@ -37,6 +38,11 @@ const Home = () => {
       </ul>
     </div>
   );
+};
+
+Home.propTypes = {
+  movies: PropTypes.array.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Home;

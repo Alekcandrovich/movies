@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { fetchMovies } from '../../api/api';
 import css from './movies.module.css';
 
@@ -68,6 +69,16 @@ const Movies = () => {
       </ul>
     </div>
   );
+};
+
+Movies.propTypes = {
+  searchTerm: PropTypes.string.isRequired,
+  searchResults: PropTypes.array.isRequired,
+  searchParams: PropTypes.object.isRequired,
+  setSearchParams: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Movies;

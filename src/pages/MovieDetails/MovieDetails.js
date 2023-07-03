@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { fetchMovieDetails } from '../../api/api';
 import css from './movieDetails.module.css';
 
@@ -79,6 +80,13 @@ const MovieDetails = () => {
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  movieId: PropTypes.string.isRequired,
+  movie: PropTypes.object.isRequired,
+  goBackLocationRef: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default MovieDetails;

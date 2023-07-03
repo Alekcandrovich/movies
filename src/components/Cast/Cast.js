@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { fetchCastMovie } from '../../api/api';
 import css from './cast.module.css';
 
@@ -41,6 +42,11 @@ const Cast = () => {
       </ul>
     </div>
   );
+};
+
+Cast.propTypes = {
+  movieId: PropTypes.number.isRequired,
+  cast: PropTypes.array.isRequired,
 };
 
 export default Cast;

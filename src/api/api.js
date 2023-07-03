@@ -1,4 +1,5 @@
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.params = {
@@ -31,4 +32,20 @@ export const fetchCastMovie = async (movieId) => {
 export const fetchMovieReviews = async movieId => {
   const { data } = await axios.get(`/movie/${movieId}/reviews`);
   return data.results;
+};
+
+fetchMovies.propTypes = {
+  query: PropTypes.string.isRequired
+};
+fetchPopular.propTypes = {
+  data: PropTypes.object.isRequired
+};
+fetchMovieDetails.propTypes = {
+  movieId: PropTypes.number.isRequired
+};
+fetchCastMovie.propTypes = {
+  movieId: PropTypes.number.isRequired
+};
+fetchMovieReviews.propTypes = {
+  movieId: PropTypes.number.isRequired
 };
