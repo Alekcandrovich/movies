@@ -1,16 +1,22 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useParams,
+  useLocation,
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { fetchMovieDetails } from '../../api/api';
 import css from './movieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
-  const [movie, setMovie] = useState (null);
+  const [movie, setMovie] = useState(null);
   const location = useLocation();
   const goBackLocationRef = useRef(location.state?.from || '/');
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const movieDetails = await fetchMovieDetails(movieId);
@@ -24,12 +30,18 @@ const MovieDetails = () => {
   }, [movieId]);
 
   if (!movie) {
-      return (
-        <div>Loading...</div>
-      );
+    return <div>Loading...</div>;
   }
 
-  const { poster_path, title, overview, release_date, vote_average, genres, runtime } = movie;
+  const {
+    poster_path,
+    title,
+    overview,
+    release_date,
+    vote_average,
+    genres,
+    runtime,
+  } = movie;
   const genresList = genres.map(genre => genre.name).join(' ');
   const hours = Math.floor(runtime / 60);
   const minutes = runtime % 60;

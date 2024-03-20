@@ -1,17 +1,17 @@
-import axios from "axios";
+import axios from 'axios';
 import PropTypes from 'prop-types';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 axios.defaults.params = {
-    api_key: '6758950845121a157509706cf14c21e8',
+  api_key: '6758950845121a157509706cf14c21e8',
 };
 
-export const fetchMovies = async (query) => {
-    const params = {
-        query,
-    };
-    const { data } = await axios.get(`/search/movie`, { params });
-    return data.results;
+export const fetchMovies = async query => {
+  const params = {
+    query,
+  };
+  const { data } = await axios.get(`/search/movie`, { params });
+  return data.results;
 };
 
 export const fetchPopular = async () => {
@@ -24,7 +24,7 @@ export const fetchMovieDetails = async movieId => {
   return data;
 };
 
-export const fetchCastMovie = async (movieId) => {
+export const fetchCastMovie = async movieId => {
   const { data } = await axios.get(`/movie/${movieId}/credits`);
   return data.cast;
 };
@@ -35,17 +35,17 @@ export const fetchMovieReviews = async movieId => {
 };
 
 fetchMovies.propTypes = {
-  query: PropTypes.string.isRequired
+  query: PropTypes.string.isRequired,
 };
 fetchPopular.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
 };
 fetchMovieDetails.propTypes = {
-  movieId: PropTypes.number.isRequired
+  movieId: PropTypes.number.isRequired,
 };
 fetchCastMovie.propTypes = {
-  movieId: PropTypes.number.isRequired
+  movieId: PropTypes.number.isRequired,
 };
 fetchMovieReviews.propTypes = {
-  movieId: PropTypes.number.isRequired
+  movieId: PropTypes.number.isRequired,
 };

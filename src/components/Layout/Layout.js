@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import css from './layout.module.css';
 
 const StyledLink = styled(NavLink)`
-color: #000000;
-&.active {
-  color: #0000ff;
-}`;
+  color: #000000;
+  &.active {
+    color: #0000ff;
+  }
+`;
 
 const Layout = () => {
   return (
@@ -15,14 +16,10 @@ const Layout = () => {
       <header className={css.nav_header}>
         <ul className={css.nav_list}>
           <li className={css.nav_item}>
-            <StyledLink to='/'>
-              Home
-            </StyledLink>
+            <StyledLink to="/">Home</StyledLink>
           </li>
           <li>
-            <StyledLink to='/movies'>
-              Movies
-            </StyledLink>
+            <StyledLink to="/movies">Movies</StyledLink>
           </li>
         </ul>
       </header>

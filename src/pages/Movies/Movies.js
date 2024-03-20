@@ -7,7 +7,7 @@ import css from './movies.module.css';
 const Movies = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleChange = event => {

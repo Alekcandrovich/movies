@@ -19,7 +19,7 @@ const Cast = () => {
     };
 
     fetchCast();
-  }, [movieId]);  
+  }, [movieId]);
 
   return (
     <div className={css.Cast}>
