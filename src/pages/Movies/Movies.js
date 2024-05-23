@@ -53,7 +53,7 @@ const Movies = () => {
           onChange={handleChange}
         />
         <button className={css.button_search} type="submit">
-          Поиск
+          ПОИСК
         </button>
       </form>
       <ul className={css.ul_Movie}>
