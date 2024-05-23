@@ -6,7 +6,8 @@
 }
 
 .h2_Home {
-  font-weight: bold;
+  font-size: 35px;
+  font-weight: 900;
   text-decoration: none;
   text-align: center;
   color: blue;
@@ -23,7 +24,6 @@
 .li_Home {
   width: 200px;
   text-align: center;
-  font-weight: bold;
 }
 
 .poster_Home {
