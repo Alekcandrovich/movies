@@ -30,7 +30,11 @@ const Home = () => {
       <ul className={css.ul_Home}>
         {movies.map(movie => (
           <li className={css.li_Home} key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            <Link
+              to={`/movies/${movie.id}`}
+              state={{ from: location }}
+              className={css.link_Home}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                 alt={movie.title}

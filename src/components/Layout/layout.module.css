@@ -1,7 +1,9 @@
 .nav_header {
   display: flex;
+  justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #808080;
+  border-bottom: 2px solid darkslategray;
+  padding: 10px;
 }
 
 .nav_list {
@@ -14,4 +16,5 @@
 
 .nav_item {
   margin: 0 20px;
+  text-decoration: none;
 }
