@@ -1,20 +1,48 @@
 .div_Movie {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 20px;
 }
 
 .ul_Movie {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.li_Movie {
+  width: 200px;
+  text-align: center;
+}
+
+.poster_Movie {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.link_Movie {
+  text-decoration: none;
+  color: darkslategray;
+  transition: color 0.3s, text-decoration 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin: 0 20px;
+  align-items: center;
+}
 
+.link_Movie:hover {
+  color: blue;
+  cursor: pointer;
 }
 
 .h2_Movie {
+  font-size: 35px;
+  font-weight: 900;
   text-decoration: none;
+  text-align: center;
   color: blue;
 }
 

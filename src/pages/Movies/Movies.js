@@ -39,14 +39,12 @@ const Movies = () => {
     }
   };
 
-  console.log(location);
-
   return (
     <div className={css.div_Movie}>
-      <h2 className={css.h2_Movie}>Movies</h2>
+      <h2 className={css.h2_Movie}>ПОИСК ФИЛЬМА</h2>
       <form onSubmit={handleSubmit}>
         <label className={css.label_search} htmlFor="search">
-          Search for movies:
+          Введите название фильма:
         </label>
         <input
           type="text"
@@ -55,14 +53,23 @@ const Movies = () => {
           onChange={handleChange}
         />
         <button className={css.button_search} type="submit">
-          Search
+          Поиск
         </button>
       </form>
-      <ul>
+      <ul className={css.ul_Movie}>
         {searchResults.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: location }}>
-              {movie.title}
+          <li className={css.li_Movie} key={movie.id}>
+            <Link
+              to={`/movies/${movie.id}`}
+              state={{ from: location }}
+              className={css.link_Movie}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                alt={movie.title}
+                className={css.poster_Movie}
+              />
+              <p>{movie.title}</p>
             </Link>
           </li>
         ))}
