@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const trendingMovies = await fetchPopular(18);
+        const trendingMovies = await fetchPopular();
         setMovies(trendingMovies);
       } catch (error) {
         console.log(error);

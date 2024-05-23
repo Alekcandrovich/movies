@@ -14,13 +14,8 @@ export const fetchMovies = async query => {
   return data.results;
 };
 
-export const fetchPopular = async (count = 18) => {
-  const { data } = await axios.get(`/trending/movie/day`, {
-    params: {
-      page: 1,
-      per_page: count,
-    },
-  });
+export const fetchPopular = async () => {
+  const { data } = await axios.get(`/trending/movie/day`);
   return data.results;
 };
 
