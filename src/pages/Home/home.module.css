@@ -1,18 +1,14 @@
-.div_Home {
+/* .div_Home {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 20px;
 }
 
 .h2_Home {
   text-decoration: none;
   color: #0000ff;
-}
-
-.h2_Home:hover {
-  text-decoration: underline;
-  cursor: pointer;
+  text-align: center;
 }
 
 .ul_Home {
@@ -20,11 +16,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-li {
-  margin: 20px 0;
-  font-weight: bold;
+  justify-content: center;
 }
 
 .li_Home {
@@ -43,10 +35,68 @@ li {
   margin-top: 10px;
   font-size: 16px;
   text-decoration: none;
-  color: #333;
+  color: #333333;
+  transition: color 0.3s, text-decoration 0.3s;
 }
 
 .li_Home p:hover {
   text-decoration: underline;
+  color: #0000ff;
+  cursor: pointer;
+} */
+
+
+
+
+
+.div_Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Центрирование заголовка и содержимого */
+  margin: 0 20px;
+}
+
+.h2_Home {
+  text-decoration: none;
+  color: #0000ff;
+  text-align: center;
+  /* Центрирование заголовка */
+}
+
+.ul_Home {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  /* Центрирование списка фильмов */
+}
+
+.li_Home {
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.poster_Home {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.link_Home {
+  text-decoration: none;
+  /* Удаление подчеркивания по умолчанию */
+  color: #333;
+  transition: color 0.3s, text-decoration 0.3s;
+  /* Плавный переход цвета и подчеркивания */
+}
+
+.link_Home:hover {
+  text-decoration: underline;
+  color: #0000ff;
+  /* Изменение цвета при наведении */
   cursor: pointer;
 }
