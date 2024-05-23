@@ -5,19 +5,6 @@
   margin: 0 20px;
 }
 
-.ul_Home {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 20px;
-
-}
-
-li {
-  margin: 10px 0;
-  font-weight: bold;
-}
-
 .h2_Home {
   text-decoration: none;
   color: #0000ff;
@@ -25,4 +12,41 @@ li {
 
 .h2_Home:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.ul_Home {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+li {
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.li_Home {
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.poster_Home {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.li_Home p {
+  margin-top: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+}
+
+.li_Home p:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
