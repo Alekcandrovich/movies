@@ -36,9 +36,7 @@ const Layout = () => {
             </ButtonLink>
           </li>
           <li className={css.nav_item}>
-            <ButtonLink to="/movies">
-              SEARCH MOVIES
-            </ButtonLink>
+            <ButtonLink to="/movies">SEARCH MOVIES</ButtonLink>
           </li>
         </ul>
       </header>
