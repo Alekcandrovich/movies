@@ -91,3 +91,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: black;
 }
+
+.link_Movie p {
+  margin: 5px 0 0;
+}

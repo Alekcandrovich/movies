@@ -10,7 +10,7 @@
   font-weight: 900;
   text-decoration: none;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 20px;
   color: blue;
 }
 
@@ -46,4 +46,8 @@
 .link_Home:hover {
   color: blue;
   cursor: pointer;
+}
+
+.link_Home p{
+  margin: 5px 0 0;
 }
