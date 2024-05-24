@@ -41,10 +41,10 @@ const Movies = () => {
 
   return (
     <div className={css.div_Movie}>
-      <h2 className={css.h2_Movie}>ПОИСК ФИЛЬМА</h2>
+      <h2 className={css.h2_Movie}>MOVIE SEARCH</h2>
       <form onSubmit={handleSubmit}>
         <label className={css.label_search} htmlFor="search">
-          Введите название фильма:
+          Enter movie title
         </label>
         <input
           type="text"
@@ -53,7 +53,7 @@ const Movies = () => {
           onChange={handleChange}
         />
         <button className={css.button_search} type="submit">
-          ПОИСК
+          SEARCH
         </button>
       </form>
       <ul className={css.ul_Movie}>

@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <div className={css.div_Home}>
-      <h2 className={css.h2_Home}>ПОПУЛЯРНЫЕ ФИЛЬМЫ СЕГОДНЯ</h2>
+      <h2 className={css.h2_Home}>POPULAR MOVIES TODAY</h2>
       <ul className={css.ul_Home}>
         {movies.map(movie => (
           <li className={css.li_Home} key={movie.id}>

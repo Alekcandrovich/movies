@@ -32,11 +32,13 @@ const Layout = () => {
         <ul className={css.nav_list}>
           <li className={css.nav_item}>
             <ButtonLink to="/" exact>
-              ПОПУЛЯРНЫЕ ФИЛЬМЫ
+              POPULAR MOVIES
             </ButtonLink>
           </li>
           <li className={css.nav_item}>
-            <ButtonLink to="/movies">ПОИСК ФИЛЬМОВ</ButtonLink>
+            <ButtonLink to="/movies">
+              SEARCH MOVIES
+            </ButtonLink>
           </li>
         </ul>
       </header>
