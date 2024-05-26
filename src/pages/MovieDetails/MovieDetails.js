@@ -76,9 +76,9 @@ const MovieDetails = () => {
           <p>
             <strong>Overview:</strong> {overview}
           </p>
-          <Link to={goBackLocationRef.current} className={css.goBack}>
+          <button onClick={() => window.history.back()} className={css.goBack}>
             Go back
-          </Link>
+          </button>
         </div>
       </div>
       <div className={css.CastReviews}>
