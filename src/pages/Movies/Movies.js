@@ -7,22 +7,14 @@ import css from './movies.module.css';
 const Movies = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [searchFormVisible, setSearchFormVisible] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.state && location.state.resetSearch) {
-      setSearchFormVisible(true);
-      setSearchResults([]); // Очищаем результаты поиска
-      setSearchParams({}); // Очищаем параметры поиска
-    }
-  }, [location.state, setSearchParams]);
 
   const handleChange = event => {
     setSearchTerm(event.target.value);
   };
+
+  const location = useLocation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +25,7 @@ const Movies = () => {
         console.log(error);
       }
     };
-
-    if (searchParams.get('textQuery')) {
-      fetchData();
-      setSearchFormVisible(false);
-    } else {
-      setSearchFormVisible(true);
-    }
+    fetchData();
   }, [searchParams]);
 
   const handleSubmit = async event => {
@@ -47,7 +33,6 @@ const Movies = () => {
     if (searchTerm) {
       setSearchParams({ textQuery: searchTerm });
       setSearchTerm('');
-      setSearchFormVisible(false);
     } else {
       setSearchResults([]);
       setSearchParams({});
@@ -56,23 +41,24 @@ const Movies = () => {
 
   return (
     <div className={css.div_Movie}>
-      <h2 className={css.h2_Movie}>ПОИСК ФИЛЬМОВ</h2>
-      {searchFormVisible && (
-        <form onSubmit={handleSubmit}>
-          <label className={css.label_search} htmlFor="search">
-            Введите название фильма
-          </label>
-          <input
-            type="text"
-            id="search"
-            value={searchTerm}
-            onChange={handleChange}
-          />
-          <button className={css.button_search} type="submit">
-            ПОИСК
-          </button>
-        </form>
-      )}
+      <h2 className={css.h2_Movie}>MOVIE SEARCH</h2>
+      <form
+        onSubmit={handleSubmit}
+        style={{ display: searchResults.length > 0 ? 'none' : 'block' }}
+      >
+        <label className={css.label_search} htmlFor="search">
+          Enter movie title
+        </label>
+        <input
+          type="text"
+          id="search"
+          value={searchTerm}
+          onChange={handleChange}
+        />
+        <button className={css.button} type="submit">
+          SEARCH
+        </button>
+      </form>
       <ul className={css.ul_Movie}>
         {searchResults.map(movie => (
           <li className={css.li_Movie} key={movie.id}>
