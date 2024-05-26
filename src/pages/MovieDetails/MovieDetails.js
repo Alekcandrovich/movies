@@ -1,11 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useParams,
-  useLocation,
-} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { fetchMovieDetails } from '../../api/api';
 import Loader from '../../components/Loader/Loader';
@@ -16,7 +10,6 @@ const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
-  const goBackLocationRef = useRef(location.state?.from || '/');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -100,7 +93,6 @@ const MovieDetails = () => {
 MovieDetails.propTypes = {
   movieId: PropTypes.string.isRequired,
   movie: PropTypes.object.isRequired,
-  goBackLocationRef: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
 
