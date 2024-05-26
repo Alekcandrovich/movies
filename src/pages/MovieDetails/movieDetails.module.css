@@ -1,8 +1,7 @@
 .movie_detail_details {
   display: flex;
-
   justify-content: space-between;
-  margin-top: 60px;
+  margin: 80px 30px 0;
   border: 2px solid #c8c8c8;
   padding: 20px;
   border-radius: 10px;
@@ -16,6 +15,7 @@
 .movie_detail_image img {
   max-width: 200px;
   height: auto;
+  border-radius: 10px;
 }
 
 .movie_detail_info {
