@@ -36,10 +36,6 @@ const MovieDetails = () => {
     return <Loader />;
   }
 
-  if (!movie) {
-    return <div>Loading...</div>;
-  }
-
   const {
     poster_path,
     title,
