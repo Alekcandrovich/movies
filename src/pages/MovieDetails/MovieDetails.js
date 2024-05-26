@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Link,
   NavLink,
@@ -8,11 +8,13 @@ import {
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { fetchMovieDetails } from '../../api/api';
+import Loader from '../../components/Loader/Loader';
 import css from './movieDetails.module.css';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
   const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
   const location = useLocation();
   const goBackLocationRef = useRef(location.state?.from || '/');
 
@@ -21,6 +23,7 @@ const MovieDetails = () => {
       try {
         const movieDetails = await fetchMovieDetails(movieId);
         setMovie(movieDetails);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -28,6 +31,10 @@ const MovieDetails = () => {
 
     fetchData();
   }, [movieId]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   if (!movie) {
     return <div>Loading...</div>;
