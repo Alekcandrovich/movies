@@ -53,20 +53,40 @@
 }
 
 .CastReviews {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.inform {
   display: flex;
-  flex-direction: space-between;
-  margin-top: 5px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .margin {
   margin-right: 20px;
 }
 
-.inform {
-  display: flex;
-  align-items: center;
+.additionalButton {
+  font-weight: bold;
+  padding: 5px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: darkslategrey;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.titel_info {
-  margin-left: 20px;
+.additionalButton:hover {
+  background-color: black;
+}
+
+.additionalInfo {
+  border: 2px solid #c8c8c8;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 30px 0;
 }

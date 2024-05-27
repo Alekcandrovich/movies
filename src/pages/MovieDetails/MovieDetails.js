@@ -44,7 +44,8 @@ const MovieDetails = () => {
   const runtimeDisplay = `${hours}h ${minutes}m`;
   const imageUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 
-  console.log(location.state);
+  const isAdditionalInfo =
+    location.pathname.includes('cast') || location.pathname.includes('reviews');
 
   return (
     <>
@@ -75,16 +76,32 @@ const MovieDetails = () => {
         </div>
       </div>
       <div className={css.CastReviews}>
-        <h4 className={css.titel_info}>Additional information</h4>
-        <div className={css.inform}>
-          <div className={css.margin}>
-            <NavLink to={`/movies/${movieId}/cast`}>View Cast</NavLink>
+        <h4 className={css.titel_info}>ADDITIONAL INFORMATION</h4>
+        {!isAdditionalInfo && (
+          <div className={css.inform}>
+            <div className={css.margin}>
+              <NavLink
+                to={`/movies/${movieId}/cast`}
+                className={css.additionalButton}
+              >
+                View Cast
+              </NavLink>
+            </div>
+            <div>
+              <NavLink
+                to={`/movies/${movieId}/reviews`}
+                className={css.additionalButton}
+              >
+                View Reviews
+              </NavLink>
+            </div>
           </div>
-          <div>
-            <NavLink to={`/movies/${movieId}/reviews`}>View Reviews</NavLink>
+        )}
+        {isAdditionalInfo && (
+          <div className={css.additionalInfo}>
+            <Outlet />
           </div>
-        </div>
-        <Outlet />
+        )}
       </div>
     </>
   );
