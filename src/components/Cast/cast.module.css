@@ -1,4 +1,4 @@
-h2 {
+/* h2 {
   margin-top: 20px;
   margin-left: 20px;
   font-size: 28px;
@@ -36,4 +36,56 @@ h2 {
 
 .Actor_name {
   font-size: 20px;
+} */
+
+
+
+
+
+h2 {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.Cast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.Cast_list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  /* Это позволяет элементам переноситься на новую строку */
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  /* Центрирование элементов */
+}
+
+.Cast_item {
+  display: flex;
+  flex-direction: column;
+  /* В этом случае элементы внутри каждого item будут располагаться вертикально */
+  align-items: center;
+  margin: 10px;
+}
+
+.Actor_image {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  /* Отступ снизу для разделения изображения и имени */
+}
+
+.Actor_name {
+  font-size: 20px;
+  text-align: center;
+  /* Центрирование текста */
 }
