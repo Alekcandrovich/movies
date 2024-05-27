@@ -70,7 +70,7 @@ const MovieDetails = () => {
             <strong>Overview:</strong> {overview}
           </p>
           <button onClick={() => window.history.back()} className={css.goBack}>
-            Go back
+            GO BACK
           </button>
         </div>
       </div>

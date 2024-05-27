@@ -34,17 +34,28 @@
 .goBack {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 120px;
   font-weight: bold;
-  z-index: 2000;
+  padding: 5px 20px;
+  font-size: 14px;
+  color: white;
+  background-color: darkslategrey;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.goBack:hover {
+  background-color: black;
 }
 
 .CastReviews {
   display: flex;
   flex-direction: space-between;
   margin-top: 5px;
-  border-top: 2px solid #c8c8c8;
-  padding-top: 0;
 }
 
 .margin {
