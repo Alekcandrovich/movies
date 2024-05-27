@@ -32,7 +32,7 @@
 }
 
 .goBack {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 120px;
   font-weight: bold;
