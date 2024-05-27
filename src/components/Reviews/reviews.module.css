@@ -10,9 +10,3 @@ li {
   margin-bottom: 16px;
   line-height: 1.5;
 }
-
-.goBack {
-  position: absolute;
-  top: 70px;
-  left: 20px;
-}

@@ -17,3 +17,8 @@ code {
 li {
   font-weight: bold;
 }
+
+h4 {
+  margin: 0;
+  font-weight: 900;
+}

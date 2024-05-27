@@ -82,17 +82,17 @@ const MovieDetails = () => {
             <div className={css.margin}>
               <NavLink
                 to={`/movies/${movieId}/cast`}
-                className={css.additionalButton}
+                className={css.additionalButtonCast}
               >
-                View Cast
+                VIEW CAST
               </NavLink>
             </div>
             <div>
               <NavLink
                 to={`/movies/${movieId}/reviews`}
-                className={css.additionalButton}
+                className={css.additionalButtonReviews}
               >
-                View Reviews
+                VIEW REVIEWS
               </NavLink>
             </div>
           </div>
