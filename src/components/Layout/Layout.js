@@ -5,7 +5,6 @@ import css from './layout.module.css';
 
 const ButtonLink = styled(NavLink)`
   display: inline-block;
-  padding: 5px 20px;
   margin: 10px;
   font-size: 14px;
   color: white;
