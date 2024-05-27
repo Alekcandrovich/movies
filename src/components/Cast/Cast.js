@@ -23,10 +23,10 @@
 
 //   return (
 //     <div className={css.Cast}>
-//       <h2 className={css.Cast_titel}>Cast</h2>
-//       <ul className={css.Сast_list}>
+//       <h2 className={css.Cast_title}>Cast</h2>
+//       <ul className={css.Cast_list}>
 //         {cast.map(actor => (
-//           <li key={actor.id} className={css.Сast_item}>
+//           <li key={actor.id} className={css.Cast_item}>
 //             <div>
 //               {actor.profile_path && (
 //                 <img
@@ -45,11 +45,11 @@
 // };
 
 // Cast.propTypes = {
-//   movieId: PropTypes.number.isRequired,
-//   cast: PropTypes.array.isRequired,
+//   movieId: PropTypes.string.isRequired,
 // };
 
 // export default Cast;
+
 
 
 
@@ -83,20 +83,21 @@ const Cast = () => {
     <div className={css.Cast}>
       <h2 className={css.Cast_title}>Cast</h2>
       <ul className={css.Cast_list}>
-        {cast.map(actor => (
-          <li key={actor.id} className={css.Cast_item}>
-            <div>
-              {actor.profile_path && (
-                <img
-                  className={css.Actor_image}
-                  src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-                  alt={`${actor.name}'s profile`}
-                />
-              )}
-            </div>
-            <div className={css.Actor_name}>{actor.name}</div>
-          </li>
-        ))}
+        {cast.map(
+          actor =>
+            actor.profile_path && (
+              <li key={actor.id} className={css.Cast_item}>
+                <div>
+                  <img
+                    className={css.Actor_image}
+                    src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                    alt={`${actor.name}'s profile`}
+                  />
+                </div>
+                <div className={css.Actor_name}>{actor.name}</div>
+              </li>
+            )
+        )}
       </ul>
     </div>
   );

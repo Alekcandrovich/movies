@@ -1,50 +1,5 @@
-/* h2 {
-  margin-top: 20px;
-  margin-left: 20px;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.Сast {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.Cast_list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-}
-
-.Cast_item {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.Actor_image {
-  width: 120px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-right: 20px;
-}
-
-.Actor_name {
-  font-size: 20px;
-} */
-
-
-
-
-
 h2 {
-  margin-top: 20px;
-  margin-left: 20px;
+  margin: 0;
   font-size: 28px;
   font-weight: bold;
 }
@@ -53,39 +8,35 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 }
 
 .Cast_list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  /* Это позволяет элементам переноситься на новую строку */
   margin: 0;
   padding: 0;
   justify-content: center;
-  /* Центрирование элементов */
 }
 
 .Cast_item {
   display: flex;
   flex-direction: column;
-  /* В этом случае элементы внутри каждого item будут располагаться вертикально */
   align-items: center;
   margin: 10px;
 }
 
 .Actor_image {
-  width: 120px;
+  width: 150px;
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 10px;
-  /* Отступ снизу для разделения изображения и имени */
 }
 
 .Actor_name {
-  font-size: 20px;
+  font-size: 12px;
   text-align: center;
-  /* Центрирование текста */
+  color: black;
+  white-space: normal;
+  word-break: break-word;
 }
